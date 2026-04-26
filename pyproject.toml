@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "remote-pydantic-settings"
+version = "0.2.0"
+description = "Pydantic Settings with remote sources (Redis, HTTP/HTTPS) via .env URLs with JSON extraction"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Anixvoid", email = "anixvoid@gmail.com"}
+]
+keywords = ["pydantic", "settings", "remote-config", "redis", "dotenv", "json"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic-settings>=2.0",
+]
+
+[project.optional-dependencies]
+redis = ["redis>=4.0"]
+http = ["requests>=2.0"]
+all = ["redis>=4.0", "requests>=2.0"]
+
+[project.urls]
+Homepage = "https://github.com/anixvoid/remote-pydantic-settings"
+Repository = "https://github.com/anixvoid/remote-pydantic-settings.git"
+Issues = "https://github.com/anixvoid/remote-pydantic-settings/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

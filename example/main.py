@@ -1,18 +1,3 @@
-# remote-pydantic-settings
-Pydantic settings extension for retrieving parameter values ​​from redis and http sources
-
-Удалённые источники конфигурации для Pydantic Settings: Redis, HTTP/HTTPS прямо из `.env`  
-Теперь с поддержкой извлечения значений из JSON (через `json_key` и `json_path`)!
-
-## Установка
-
-```bash
-pip install git+https://github.com/anixvoid/remote-pydantic-settings
-```
-
-## Пример использования
-
-```python
 # test_settings.py
 from pydantic import Field
 from remote_pydantic_settings import RemoteSettings
@@ -48,6 +33,3 @@ finally:
     # Удаляем тестовый .env
     if os.path.exists('.env'):
         os.remove('.env')
-```
-
-Если источник недоступен, берётся значение по умолчанию из модели.
