@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=64", "setuptools-scm>=8"]
-build-backend = "setuptools.backends._legacy:_Backend"
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backend"
 
 [project]
 name = "remote-pydantic-settings"
-version = "0.2.0"
+version = "0.2.1"
 description = "Pydantic Settings with remote sources (Redis, HTTP/HTTPS) via .env URLs with JSON extraction"
 readme = "README.md"
 license = {text = "MIT"}
@@ -38,9 +38,3 @@ all = ["redis>=4.0", "requests>=2.0"]
 Homepage = "https://github.com/anixvoid/remote-pydantic-settings"
 Repository = "https://github.com/anixvoid/remote-pydantic-settings.git"
 Issues = "https://github.com/anixvoid/remote-pydantic-settings/issues"
-
-[tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.packages.find]
-where = ["src"]
